@@ -1,0 +1,119 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.form-control {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+}
+.form-control::placeholder {
+  font-weight: bold;
+}
+.card {
+  padding: 1.5em 0.5em 0.5em;
+  text-align: center;
+  border-radius: 2em;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.card img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+/* Styles for the modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 50%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+ pointer-events: none;
+}
+.modal.open {
+  display: block;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  font-size: 28px;
+  border: 1px solid #888;
+  max-height: 80%; /* Maximum height to prevent scrolling */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+  width: 80%; /* Could be more or less, depending on screen size */
+  
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5bc0de;
+  color: white;
+}
+.name{
+  position: absolute;
+ left: 20%;
+}
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-main-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styles for the divider */
+.divider {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+/* Styles for the carousel */
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* Styles for the info items */
+.info-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.info-item i {
+  margin-right: 5px;
+}
+
+/* Styles for the search icon */
+.custom-background {
+  background-color: #007bff;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.bwhite {
+  color: white;
+}
+
+/* Optional: Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+  }
+}

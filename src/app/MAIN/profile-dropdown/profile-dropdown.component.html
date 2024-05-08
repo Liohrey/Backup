@@ -1,0 +1,11 @@
+<div class="profile-dropdown">
+  <button class="profile-button" (click)="toggleDropdown()" [class.clicked]="buttonClicked">
+    <i class="fas fa-user profile-icon"></i>
+    <span class="username">professorx</span>
+    <i class="fas fa-caret-down dropdown-icon" [class.up]="dropdownPosition === 'up'"></i>
+  </button>
+  <div class="dropdown-content" [ngClass]="{'show': dropdownOpen, 'up': dropdownPosition === 'up'}">
+    <button class="dropdown-item" (click)="openChangePasswordDialog($event)">Change Password</button>
+    <a href="#" class="dropdown-item">Logout</a> <!-- Apply same class -->
+  </div>
+</div>

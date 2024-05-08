@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+* {
+  font-family: 'Patrick Hand', cursive;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.corner-image {
+  position: absolute;
+  z-index: -1;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.person {
+  animation-name: slideInFromLeft;
+  animation-duration: 1s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.form-container {
+  background-color: #d9d9d9;
+  font-family: 'Patrick Hand', sans-serif;
+  text-align: center;
+  padding: 30px;
+  border-radius: 30px;
+  margin-top: 60px;
+}
+
+.form-container .title {
+  color: #fff;
+  font-size: 23px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin: 0 0 60px;
+}
+
+.input-group-text img {
+  height: 30px;
+  width: auto;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+input,
+button {
+  border-radius: 10px;
+}
+
+button {
+  transition: transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}

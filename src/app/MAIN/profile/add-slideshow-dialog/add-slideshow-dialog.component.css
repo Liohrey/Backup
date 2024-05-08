@@ -1,0 +1,33 @@
+/* add-slideshow-dialog.component.css */
+
+.dialog-container {
+  width: 400px;
+  background-color: rgb(117, 117, 204);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center; /* Center align the content */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.dialog-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.file-input {
+  margin-bottom: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Center align the buttons */
+}
+
+.buttons-container button {
+  margin: 0 10px; /* Add spacing between buttons */
+}

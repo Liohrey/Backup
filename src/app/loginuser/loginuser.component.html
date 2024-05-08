@@ -1,0 +1,62 @@
+<div class="corner-image top-left">
+  <img src="../assets/1.png" alt="" class="img-fluid" style="height: 300px; width: 250px" />
+</div>
+<div class="corner-image top-right">
+  <img src="../assets/4.png" alt="" class="img-fluid" style="height: 300px; width: 250px" />
+</div>
+<section class="vh-100">
+  <div class="container py-5 h-100 w-75">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-md-6 col-lg-5 col-xl-6 mt-3 text-xl-start">
+        <img
+          src="../assets/PERSON.png"
+          class="img-fluid person"
+          alt="Phone image"
+          style="margin-left: -20px"
+        />
+      </div>
+      <div class="col-md-6 col-lg-7 col-xl-6">
+        <div class="form-container">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h1 class="mx-auto p-2 display-6 text-center" style="font-size: 40px">
+              Welcome Users!
+            </h1>
+
+            <div class="input-group my-3">
+              <span class="input-group-text">
+                <img src="../assets/email.png" alt="Email Icon" />
+              </span>
+              <input formControlName="email" type="text" class="form-control" placeholder="Email" />
+            </div>
+
+            <div class="input-group my-3">
+              <span class="input-group-text">
+                <img src="../assets/padlock.png" alt="Password Icon" />
+              </span>
+              <input formControlName="password" type="password" class="form-control" placeholder="Password" #passwordInput />
+              <!-- Show Password Button -->
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="togglePasswordVisibility()">
+                  <i class="fa" [ngClass]="{'fa-eye': !passwordVisible, 'fa-eye-slash': passwordVisible}"></i>
+                </button>
+              </div>
+              <!-- End of Show Password Button -->
+            </div>
+            
+            <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block mt-3">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="corner-image bottom-left">
+  <img src="../assets/5.png" alt="" class="img-fluid" style="height: 300px; width: 300px" />
+</div>
+<div class="corner-image bottom-right">
+  <img src="../assets/3.png" alt="" class="img-fluid" style="height: 250px; width: 300px" />
+</div>

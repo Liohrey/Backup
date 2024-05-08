@@ -1,0 +1,14 @@
+<div class="dialog-container">
+  <h2 class="dialog-title">
+    <i class="bi bi-image"></i> Add Images to Slideshow
+  </h2>
+  <input type="file" (change)="onFileSelected($event)" class="file-input">
+  <div class="buttons-container">
+    <button mat-raised-button color="warn" (click)="closeDialog()">
+      <i class="bi bi-x-circle"></i> Cancel
+    </button>
+    <button mat-raised-button color="primary" (click)="addImages()">
+      <i class="bi bi-plus-circle"></i> Add Images
+    </button>
+  </div>
+</div>

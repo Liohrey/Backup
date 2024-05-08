@@ -1,0 +1,163 @@
+
+<div class="container">
+  <div class="slideShow">
+    <button (click)="openDialog()">
+      <i class="bi bi-image" id="slideshow-image"></i> Add Slideshow
+    </button>
+    
+    <div *ngIf="slideshowImages.length === 0" class="empty-slideshow-message">
+      No images added yet. Click the button below to add slideshow.
+    </div>
+    <div *ngIf="slideshowImages.length > 0" class="slideshow-image">
+      <img [src]="currentImage" alt="Slideshow Image">
+    </div>
+  </div>
+  
+    <div class="profilePic">
+      <img src="{{information.profilePicture}}" alt="profile">
+      <div class="profileText">
+        <p id="userName" contenteditable="true" (input)="updateName($event)">{{information.name}}</p>
+        <p id="department" contenteditable="true" (input)="updateField('department', $event)">{{information.department}}</p>
+      </div>
+      <button (click)="openPop()">
+        <img src="/assets/pen.png" alt="Pen" id="profile-edit-profile">Edit Profile
+      </button>
+    </div>
+    <hr class="container-hr">
+    
+    <div class="card">
+      <p id="card-title">Basic Information</p>
+      <div class="info">
+        <div *ngIf="addedInformation.length === 0" class="empty-information">
+          No information added yet. Click the edit profile button above to add information.
+        </div>
+        <ul>
+          <li *ngFor="let info of addedInformation">
+            <p>
+              <img src="/assets/graduation-cap.png" alt="" id="courseHandled">{{info.courseHandled}}
+            </p>
+          </li>
+          <li *ngFor="let info of addedInformation">
+            <p>
+              <img src="/assets/graduation.png" alt="" id="college">{{info.college}}
+            </p>
+          </li>
+          <li *ngFor="let info of addedInformation">
+            <p>
+              <img src="/assets/experience.png" alt="" id="teachingExperience">{{info.teachingExperience}} Years in Teaching
+            </p>
+          </li>
+          <li *ngFor="let info of addedInformation">
+            <p>
+              <img src="/assets/deadline.png" alt="" id="employmentStatus">{{info.employmentStatus}}
+            </p>
+          </li>
+          <li *ngFor="let info of addedInformation">
+            <p>
+              <img src="/assets/job-offer.png" alt="" id="info-job-position">{{info.position}}
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    
+  </div>
+  <div class="wrapper" *ngIf="pop">
+    <div class="overlay">
+      <div class="editProfile">
+        <button (click)="closePop()" class="button-popup-close">
+          <img src="/assets/close.png" alt="" id="popup-close">
+        </button>
+        <div class="content">
+          <p id="title">Edit Profile</p>
+          <hr class="content-hr">
+          <div class="content-profile-pic">
+            <p class="content-profile-pic-title">Profile Picture</p>
+            <button type="button" class="edit-button" (click)="openFileInput()">
+              <p>{{ information.profilePicture ? 'Change Profile' : 'Add' }}</p>
+            </button>
+            <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
+            <img *ngIf="information.profilePicture; else addProfile" [src]="information.profilePicture" alt="Profile Picture">
+            <ng-template #addProfile><p>No profile picture. Add one!</p></ng-template>
+          </div>
+          
+          
+          <div class="content-slideshow">
+            <p class="content-slideshow-title">Slideshow</p>
+          
+            <div *ngIf="slideshowImages.length > 0" class="content-slideshow-card">
+              <button type="button" class="delete-icon-button" (click)="deleteCurrentImage()">
+                <i class="bi bi-trash-fill"></i> 
+              </button>
+              <img [src]="currentImage" alt="Slideshow Image">
+              <div class="slideshow-controls">
+                <button type="button" class="left-icon-button" (click)="prevImage(); stopSlideshow()">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button type="button" class="right-icon-button" (click)="nextImage(); stopSlideshow()">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+            <button *ngIf="slideshowImages.length === 0" type="button" class="edit-button-s" (click)="openSlideshowFileInput()">
+              Add Image
+            </button>
+            <br>
+            <br>
+            <br>
+            <button *ngIf="slideshowImages.length > 0" type="button" class="edit-button-s" (click)="openSlideshowFileInput()">
+              Change Image
+            </button>
+            <input type="file" #slideshowFileInput style="display: none" (change)="onSlideshowFileSelected($event)">
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          <div class="content-information">
+            <p class="content-information-title">Customize your information</p>
+            <button class="edit" (click)="addInformationToContainer()">Add</button>
+            <ul class="customize-info">
+              <li>
+                <img src="/assets/graduation-cap.png" alt=""> Degree
+                <br>
+                <span class="txt"><input type="text" [(ngModel)]="information.courseHandled"></span>
+                <br>
+              </li>
+              <li>
+                <img src="/assets/deadline.png" alt=""> Teaching Status
+                <br>
+                <span class="txt1"><input type="text" [(ngModel)]="information.employmentStatus"></span>
+                <br>
+              </li>
+              <li>
+                <img src="assets/graduation-cap.png" alt=""> Department
+                <br>
+                <input type="text" [(ngModel)]="information.department">
+                <br>
+              </li>
+              <li>
+                <img src="/assets/online-learning.png" alt=""> Course Handled
+                <br>
+                <input type="text" [(ngModel)]="information.courseHandled">
+                <br>
+              </li>
+              <li>
+                <img src="/assets/quality.png" alt="" srcset=""> Years of Teaching
+                <br>
+                <input type="number" [(ngModel)]="information.teachingExperience">
+
+                <br>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  

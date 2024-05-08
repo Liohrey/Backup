@@ -1,0 +1,34 @@
+<h1>What's your feedback?</h1>
+
+<div class="container">
+  <img src="{{ information.profilePicture }}" alt="" />
+  <form>
+    <input type="text" #feedbackInput placeholder="What's on your mind..." />
+  </form>
+  <button (click)="addFeedback(feedbackInput.value)">Post</button>
+</div>
+
+<!-- Display feedback containers -->
+<div *ngIf="feedbackItems.length > 0" class="feedback-container">
+  <div *ngFor="let item of feedbackItems; let i = index">
+    <div class="flex-container">
+      <img src="{{ information.profilePicture }}" alt="" class="profile-pic-large" />
+      <div class="container2">
+        <!-- Edit mode -->
+        <ng-container *ngIf="editingIndex === i; else viewMode">
+          <input type="text" [(ngModel)]="item.feedback" />
+          <button (click)="saveEditedFeedback(item)">Save</button>
+        </ng-container>
+        <!-- View mode -->
+        <ng-template #viewMode>
+          <div class="feedback">{{ item.feedback }}</div>
+          <!-- Buttons section -->
+          <div>
+            <button (click)="editFeedback(i)">Edit</button>
+            <button (click)="deleteFeedback(i)">Delete</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
