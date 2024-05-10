@@ -17,7 +17,10 @@
         <!-- Edit mode -->
         <ng-container *ngIf="editingIndex === i; else viewMode">
           <input type="text" [(ngModel)]="item.feedback" />
-          <button class="button-20 edit-button" (click)="saveEditedFeedback(item)">Save</button>
+          <div class="edit-buttons">
+            <button class="button-20 save-button-green" (click)="saveEditedFeedback(item)">Save</button>
+            <button class="button-20 cancel-button" (click)="cancelEdit()">Cancel</button>
+          </div>
         </ng-container>
         <!-- View mode -->
         <ng-template #viewMode>
@@ -28,7 +31,7 @@
     <!-- Buttons section (outside of feedback-item) -->
     <div class="buttons-container" *ngIf="editingIndex !== i">
       <button class="button-20 edit-button" (click)="editFeedback(i)">Edit</button>
-      <button class="button-20 delete-button" (click)="deleteFeedback(i)">Delete</button>
+      <button class="button-20 delete-button delete-button-red" (click)="deleteFeedback(i)">Delete</button>
     </div>
   </div>
 </div>

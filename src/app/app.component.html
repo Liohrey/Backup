@@ -1,9 +1,11 @@
-<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
-<app-body
-  [collapsed]="isSideNavCollapsed"
-  [screenWidth]="screenWidth"
-></app-body>
-<div class="container-fluid g-1">
-  <app-header></app-header>
-</div>
+<ng-container *ngIf="!isLoggedIn">
+  <app-loginuser></app-loginuser>
+</ng-container>
 
+<ng-container *ngIf="isLoggedIn">
+  <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+  <app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-body>
+  <div class="container-fluid g-1">
+    <app-header></app-header>
+  </div>
+</ng-container> 
