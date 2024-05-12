@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router'; // Import the Router service
+import { Router } from '@angular/router'; 
 import { AuthService } from '../auth.service';
 import { AuthGuard } from '../auth.guard';
 
@@ -13,14 +13,14 @@ export class LoginuserComponent {
   @ViewChild('passwordInput') passwordInputRef!: ElementRef;
   loginForm: FormGroup;
   errorMessage: string = '';
-  showPassword: boolean = false; // Variable to track password visibility
-  passwordFieldType: string = 'password'; // Field type for password input
+  showPassword: boolean = false; 
+  passwordFieldType: string = 'password'; 
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private authGuard: AuthGuard,
-    private router: Router // Inject the Router service
+    private router: Router 
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -36,7 +36,7 @@ export class LoginuserComponent {
           if (data.success) {
             console.log('Login successful');
             alert('Login successful!');
-            this.router.navigate(['/home']); // Navigate to '/home' upon successful login
+            this.router.navigate(['/home']); 
           } else {
             console.error('Login failed');
             this.errorMessage = data.message;
@@ -44,7 +44,7 @@ export class LoginuserComponent {
         },
         (error) => {
           console.log('An error occurred: ', error);
-          this.errorMessage = 'An error occured. Please try again later.';
+          this.errorMessage = 'Email or password incorrect';
         }
       );
   }

@@ -8,18 +8,17 @@ import { LoginuserComponent } from './loginuser/loginuser.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginuserComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] }, // Protect the 'home' route
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }, // Protect the 'profile' route
-  { path: 'feedbacks', component: FeedbacksComponent, canActivate: [AuthGuard] }, // Protect the 'feedbacks' route
-  { path: 'aboutus', component: AboutusComponent, canActivate: [AuthGuard] }, // Protect the 'aboutus' route
-  // Lazy-loaded module for faculty
+  { path: 'login', component: LoginuserComponent, title: 'Credify | Login' },
+  { path: 'home', component: HomeComponent, title: 'Credify | Home', canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, title: 'Credify | Profile', canActivate: [AuthGuard] }, 
+  { path: 'feedbacks', component: FeedbacksComponent, title: 'Credify | Feedbacks', canActivate: [AuthGuard] }, 
+  { path: 'aboutus', component: AboutusComponent, title: 'Credify | About Us', canActivate: [AuthGuard] }, 
+
   {
     path: 'faculty',
     loadChildren: () =>
       import('./faculty/faculty.module').then((m) => m.ProductsModule),
   },
-  // Redirect any unknown paths to the home page
   { path: '**', redirectTo: '/home' },
 ];
 
