@@ -13,17 +13,23 @@ export class CvComponent {
   information = {
     profilePicture: '/assets/Man2.png',
     name: 'Professor X',
-    departmen: 'College of Computer Studies',
+    department: 'College of Computer Studies',
     position: 'IT Educator',
-    yearsInTeaching: '11 years',
+    yearsInTeaching: '11 years in Teaching',
     birthdate: 'September 07, 1990',
     contactNumber: '09217627816',
     gmail: 'professorxgordon college.edu.ph',
   };
 
-  experties ={
+  socialMedia = {
+    facebook: 'https://www.facebook.com/Leohyray.Belleza',
+    instagram: 'https://www.facebook.com/Leohyray.Belleza',
+    twitter: 'https://www.facebook.com/Leohyray.Belleza',
+  }
+
+  expertise ={
     skill1: 'css',
-    skill2: 'htnl',
+    skill2: 'html',
     skill3: 'javascript',
     skill4: 'angular',
     skill5: 'react',
@@ -31,8 +37,8 @@ export class CvComponent {
 
   honorsAndAwards = {
     award1: "Board Exam Passer",
-    award2: "Manga Cum Laude",
-    award3: "Manga Cum Laude",
+    award2: "Magna Cum Laude",
+    award3: "Magna Cum Laude",
   }
 
   certifications = {
@@ -46,6 +52,8 @@ export class CvComponent {
     school1: 'Ateneo de Manila University',
     degree2: 'Bachelor of Science in Information Technology',
     school2: 'Ateneo de Manila University',
+    degree3: 'Master in Information Technology (CAR)',
+    school3: 'Ateneo de Manila University',
   }
 
   industryExperience = {
@@ -65,6 +73,10 @@ export class CvComponent {
     course5: 'Information Management',
     course6: 'Data Structures and Algorithms',
     course7: 'Object Oriented Programming',
+    course8: 'Object Oriented Programming',
+    course9: 'Object Oriented Programming',
+    course10: 'Object Oriented Programming',
+
   }
 
   researchAndCommunityExtensions = {
@@ -72,6 +84,8 @@ export class CvComponent {
     detail1: 'This study aims to investigate how blockchain technology can enhance transparency, traceability, and efficiency in supply chain management processes.',
     research2: 'Hackathons and Tech Meetups',
     detail2: 'Organizing hackathons and tech meetups where developers, designers, and tech enthusiasts come together to collaborate on projects, share knowledge, and network with industry professionals.',
+    research3: 'Hackathons and Tech Meetups',
+    detail3: 'Organizing hackathons and tech meetups where developers, designers, and tech enthusiasts come together to collaborate on projects, share knowledge, and network with industry professionals.',
   }
 
 

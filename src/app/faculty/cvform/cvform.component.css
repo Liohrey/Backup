@@ -1,8 +1,9 @@
 .container {
+    position: absolute;
     width: 100%;
     margin-bottom: 40px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #576EB9;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(54, 54, 54, 0.1);
 }
@@ -35,7 +36,7 @@ h3 {
 }
 
 .group1 {
-    background-color: #D9D9D9;
+    background-color: #CFDAEE;
     padding: 10px;
     padding-bottom: 20px;
     border-radius: 5px;
@@ -73,4 +74,7 @@ hr {
     .grid-container {
         grid-template-columns: 1fr; /* Single column for small screens */
     }
+}
+.description textarea {
+    resize: vertical; /* Allow vertical resizing */
 }

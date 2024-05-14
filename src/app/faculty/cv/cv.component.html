@@ -1,49 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="cv.component.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="container">
+<button>Edit</button>
+<div class="container">
     <div class="cv">
       <div class="box-1">
         <div class="top">
-          <h1>ProfessorX</h1>
-          <p style="font-weight: bold; margin-bottom: 5px;" >College of Computer Studies</p>
-          <p>IT Educator</p>
-          <p>11 Years in Teaching</p>
+          <h1>{{information.name}}</h1>
+          <h2>{{information.department}}</h2>
+          <p>{{information.position}}</p>
+          <p>{{information.yearsInTeaching}}</p>
         </div>
       </div>
+      <!-- left side  -->
       <div class="box-2">
         <div class="image-profile">
           <img src={{information.profilePicture}} alt="">
         </div>
-        <!-- side contact -->
         <div class="side-contact">
           <div class="side-contact-title">
-            <h1>Contact</h1>
+            <h1>Contacts</h1>
           </div>
-          <div class="side-contact-p">
-            <p>{{information.birthdate}}</p>
-            <p>{{information.contactNumber}}</p>
-            <p>{{information.gmail}}</p>
+          <div class="side-contact-info">
+            <ul>
+              <li><img src="/assets/calendar.png" alt=""><p>{{information.birthdate}}</p></li>
+              <li><img src="/assets/phone-call.png" alt=""><p>{{information.contactNumber}}</p></li>
+              <li><img src="/assets/email1.png" alt=""><p>{{information.gmail}}</p></li>
+            </ul>
           </div>
           <hr>
         </div>
-        <div class="experties">
-          <h1>Experties</h1>
+        <div class="expertise">
+          <h1>Expertise</h1>
             <ul>
-              <li><p>{{experties.skill1}}</p></li>
-              <li><p>{{experties.skill2}}</p></li>
-              <li><p>{{experties.skill3}}</p></li>
-              <li><p>{{experties.skill4}}</p></li>
-              <li><p>{{experties.skill1}}</p></li>
+              <li><p>{{expertise.skill1}}</p></li>
+              <li><p>{{expertise.skill2}}</p></li>
+              <li><p>{{expertise.skill3}}</p></li>
+              <li><p>{{expertise.skill4}}</p></li>
+              <li><p>{{expertise.skill1}}</p></li>
             </ul>
         </div>
           <div class="honors-and-awards">
@@ -58,90 +49,107 @@
             <h1>Certifications</h1>
               <ul>
                 <li><p>{{certifications.cert1}}</p></li>
-                <li><p>{{certifications.cert1}}</p></li>
-                <li><p>{{certifications.cert1}}</p></li>
+                <li><p>{{certifications.cert2}}</p></li>
+                <li><p>{{certifications.cert3}}</p></li>
               </ul>
           </div>
+          <div class="social-media">
+            <ul>
+              <li><a href= {{socialMedia.facebook}} target="_blank"><img src="/assets/facebook.png" alt=""></a></li>
+              <li><a href={{socialMedia.twitter}} target="_blank"><img src="/assets/twitter.png" alt=""></a></li>
+              <li><a href={{socialMedia.instagram}} target="_blank"><img src="/assets/instagram.png" alt=""></a></li>
+            </ul>
+          </div>
       </div>
+      <!-- body -->
       <div class="box-3">
-        <div class="educational-attainment">
+        <div class="educational-attainment-container">
           <h1>Educational Attainment</h1>
+          <div class="educational-attainment">
             <ul>
-              <li>
-                <p  id="degree">{{educationalAttainment.degree1}}</p>
-                <ul>
-                  <li><p style="font-size: 18px;">{{educationalAttainment.school1}}</p></li>
-                </ul>
-              </li>
+                <li><p class="degree">{{educationalAttainment.degree1}}</p></li>
+                <li><p>{{educationalAttainment.school1}}</p></li>
             </ul>
+          </div>
+          <div class="educational-attainment">
             <ul>
-              <li>
-                <p id="degree">{{educationalAttainment.degree2}}</p>
-                <ul>
-                  <li><p style="font-size: 18px;">{{educationalAttainment.school2}}</p></li>
-                </ul>
-              </li>
+                <li><p class="degree">{{educationalAttainment.degree2}}</p></li>
+                <li><p>{{educationalAttainment.school2}}</p></li>
             </ul>
+          </div>
+          <div class="educational-attainment">
+            <ul>
+                <li><p class="degree">{{educationalAttainment.degree3}}</p></li>
+                <li><p>{{educationalAttainment.school3}}</p></li>
+            </ul>
+          </div>
         </div>
         <br>
         <div class="industry-experience">
           <h1>Industry Experience</h1>
-            <ul>
-              <li><p>{{industryExperience.school1}}</p>
-                <ul>
-                  <li><p style="color: #FF9100; font-size: 18px;">{{industryExperience.employment1}}</p>
-                    <ul>
-                      <li><p style="font-size: 18px;">{{industryExperience.workingYear1}}</p></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <ul>
-              <li><p>{{industryExperience.school2}}</p>
-                <ul>
-                  <li><p style="color: #FF9100; font-size: 18px;">{{industryExperience.employment2}}</p>
-                    <ul>
-                      <li><p style="font-size: 18px;">{{industryExperience.workingYear2}}</p></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+          <div class="industry-experience-container">
+           <ul>
+            <li class="industry-experience-school">{{industryExperience.school1}}</li>
+            <li class="row2">{{industryExperience.employment1}}</li>
+            <li class="row3">{{industryExperience.workingYear1}}</li>
+           </ul>
+           <ul>
+            <li class="industry-experience-school">{{industryExperience.school2}}</li>
+            <li class="row2">{{industryExperience.employment2}}</li>
+            <li class="row3">{{industryExperience.workingYear2}}</li>
+           </ul>
+          </div>
         </div>
         <br>
         <div class="course-handled">
           <h1>Course Handled</h1>
-          <ul>
-            <li><p>{{courseHandled.course1}}</p></li>
-            <li><p>{{courseHandled.course2}}</p></li>
-            <li><p>{{courseHandled.course3}}</p></li>
-            <li><p>{{courseHandled.course4}}e</p></li>
-            <li><p>{{courseHandled.course5}}</p></li>
-          </ul>
+          <div class="course-columns">
+            <ul>
+              <li><p>{{courseHandled.course1}}</p></li>
+              <li><p>{{courseHandled.course2}}</p></li>
+              <li><p>{{courseHandled.course3}}</p></li>
+              <li><p>{{courseHandled.course4}}</p></li>
+              <li><p>{{courseHandled.course5}}</p></li>
+            </ul>
+            <ul>
+              <li><p>{{courseHandled.course6}}</p></li>
+              <li><p>{{courseHandled.course7}}</p></li>
+              <li><p>{{courseHandled.course8}}</p></li>
+              <li><p>{{courseHandled.course9}}</p></li>
+              <li><p>{{courseHandled.course10}}</p></li>
+            </ul>
+          </div>
         </div>
         <br>
         <div class="Research-community-extension">
           <H1>Research & Community Extensions</H1>
+          <div class="research1">
           <ul>
-            <li><p style="color: #FF9100;">{{researchAndCommunityExtensions.research1}}</p>
+            <li><h2>{{researchAndCommunityExtensions.research1}}</h2>
               <ul>
-                <li><p style="font-size: 18px;">{{researchAndCommunityExtensions.detail1}}</p></li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li><p style="color: #FF9100;">{{researchAndCommunityExtensions.research2}}</p>
-              <ul>
-                <li><p style="font-size: 18px;">{{researchAndCommunityExtensions.detail1}}</p></li>
+                <li><p>{{researchAndCommunityExtensions.detail1}}</p></li>
               </ul>
             </li>
           </ul>
         </div>
-      </div>
-      
+        <div class="research2">
+          <ul>
+            <li><h2>{{researchAndCommunityExtensions.research2}}</h2>
+              <ul>
+                <li><p>{{researchAndCommunityExtensions.detail2}}</p></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="research3">
+          <ul>
+            <li><h2>{{researchAndCommunityExtensions.research3}}</h2>
+              <ul>
+                <li><p>{{researchAndCommunityExtensions.detail3}}</p></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
     </div>
   </div>
-</body>
-</html>
   
